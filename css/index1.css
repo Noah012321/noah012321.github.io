@@ -233,7 +233,7 @@ header {
         width: 80%;
     }
 .colum img:hover {
-      transform: scale(1.1);  /*(110% zoom) */
+      transform: scale(1.5);  /*(150% zoom) */
     }
 .accessibility-images-container2 {
         display: flex;
@@ -251,7 +251,7 @@ header {
       width: 30%;
   }
   .colum2 img:hover {
-    transform: scale(1.1);  /*(110% zoom) */
+    transform: scale(1.5);  /*(150% zoom) */
   }
 .colum-header {
       font-size: 2em;
