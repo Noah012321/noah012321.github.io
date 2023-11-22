@@ -1,0 +1,499 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/*Default inclusive css code (multiple page usage)*/
+body {
+      font-family: Verdana;
+      margin: 0; /*removes white border around page*/
+  }
+/*Our logo wrap/header*/
+header {
+      background-color: #ffd500;
+      padding: 5px;
+      text-align: center;
+  }
+/*Code for top page image and image-text*/
+.top-image {
+      position: relative; /*Added position: relative to alow .scrollButton to be infront of top image*/
+  }
+.default-article-img {
+      border-radius: 5px;
+      width: 100%;
+  }
+.image-text {
+      background-color: rgb(255, 255, 255);
+      padding: 3px;
+  }
+/*Code for scroll button/arrow on header image*/
+.scrollButton {
+      background-color: rgb(255, 255, 255);
+      border: solid rgb(255, 255, 255);
+      border-radius: 20px;
+      border-width: 3px;
+      bottom: 15%;
+      color: rgb(77, 73, 73);
+      left: 47%;
+      opacity: 0.9;
+      padding: 10px;
+      position: absolute;
+  }
+.scrollButton p {
+      display: none;
+  }
+/*Making of the arrow icon*/
+/*Makeshift arrow using half a border sliced diagonally*/
+.arrow {
+      border: solid black;
+      border-width: 0 5px 5px 0;
+      display: inline-block;
+      margin: 4px;
+      margin-bottom: 10px;
+      opacity: 1;
+      padding: 12px;
+  }
+  /*If arrowed is hovered over, it will be displayed as gray*/
+  .arrow:hover {
+      border: solid;
+      border-width: 0 4px 4px 0;
+      color: gray;
+  }
+  /*The "sliced" border is then rotated 45 degree to point downwards*/
+  .down {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+  }
+/*header with logo aligned in the center using text-align*/
+header {
+      background-color: #ffd500;
+      text-align: center;
+      width: 100%;
+  }
+/*Logo for the Navbar*/
+.met-logo {
+      width: 100px;
+  }
+/*Css for navbar*/
+.navbar{
+      align-items: center;
+      background-color: #ffd500; /*We wanted to match the color of oslomet, inspected and copied color*/
+      width: 100%;
+      z-index: 1; 
+      overflow: auto; /*z-index: 1 gives the navbar position infront of the arrow*/
+  }
+
+@media screen and (min-width: 600px) {
+    .navbar {
+          background-color: #ffd500;
+          overflow: auto;
+          position: -webkit-sticky; /*for safari*/
+          position: sticky;
+          top: 0;
+          width: 100%;
+    }
+}
+.navbar a {
+    background-color: #ffd500;
+    color: black;
+    float: left;
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.5s;
+    width: 20%;
+  }
+/*this css code is for when the website less than 500px, where the nav menu will be displayed vertically*/
+@media screen and (max-width: 600px) {
+  .navbar a {
+      display: block;
+      float: none;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+/*a:hover highlights what he cursor is hovering*/
+.navbar a:hover {
+      background-color: #d1b62c;
+      border-radius: 5px;
+      text-shadow: 2px 2px rgb(255, 246, 228) ;
+  }
+/*active-home for a flush finish against left side of page*/
+.navbar a.active-home {
+        background-color: #d1b62c;
+        border-top-right-radius: 5px;
+        font-weight: 600; /*only used for the most left navigation bar for a seemless fit to the left side of the page*/
+  }
+/*active "a" to highlight which site you're currently on*/
+.navbar a.active {
+      background-color: #d1b62c;
+      border-radius: 5px;
+      font-weight: 600;
+  }
+
+
+/*Css for parent and child divs for article*/
+/*Using div class .wrapper as a wrapper for .main-container*/
+.wrapper {
+      background-color:rgb(255, 255, 255);
+      height: 100%;
+  }
+/*This is a parent div called .main-container*/
+/*got an idea by reading this page https://www.educative.io/answers/how-to-make-side-by-side-divs-in-html did not copy any code!*/
+.main-container{
+      display: flex;
+      justify-content: space-around; /*child div will have a kind of wrapper around each of .mainarticle*/
+      line-height: 1.6;
+      margin: auto;  /*Div will be centered*/
+      padding: 5vw;
+      width: 70%;  /*article needed spaces on the sides, 70% was perfect*/
+  }
+/*We have two child divs one named .mainarticle which is mainly for text and one is named .mainarticle2 which is used for images*/
+.mainarticle{
+      width: 40%; /*if width were 50% then the child div would've touched each other. 40% looked the best*/
+  }
+/*By using margin: auto;, the child div with image with will align itself centerted*/
+.mainarticle2 {
+      margin: auto;
+      width: 40%;
+  }
+.mainarticle p {
+    line-height: 1.8em;
+    word-spacing: 0.2em;
+}
+/*If the page is equal or less than 1200px, the children div will be displayed as block rather than flex for optimal space usage*/
+@media only screen and (max-width: 1200px) {
+    .main-container{
+          display: block;
+          width: 80%;
+      }
+    .mainarticle {
+          margin: auto;
+          width: 100%;
+      }
+    .mainarticle2 {
+          margin: auto;
+          width: 80%;
+      }
+  }
+
+
+/*Footer*/
+/*This is our footer for home, accessibility, topical and about page, by using the same technique as parent and child div in .main-container*/
+.outer-footer{
+      background-color:#ffd500;
+  }
+.footer-container {
+        background-color: #ffd500;
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        padding: 2vw;
+        width: 70%;
+    }
+/*Footer will be displayed vertically instead of horizontally if screens are smaller than 800px*/
+@media only screen and (max-width: 800px) {
+    .footer-container{
+          display: block;
+      }
+  }
+.footer-container h2{
+      font-size: 1.6em;
+  }
+.social-logo {
+      margin-top: 1em;
+      padding: 0.7em;
+      width: 50px; /*social media logo needed some space from top border of footer*/
+  }
+
+
+/*Exclusive css for accessibility page*/
+/*These code are reused but with different numbers*/
+.accessibility-header{
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        padding-top: 5vw;
+        width: 70%;
+    }
+.accessibility-header h1 {
+        border-radius: 10px;
+        padding: 10px;
+    }  
+.accessibility-header h2 {
+      font-size: 2.2em;
+  }
+.accessibility-images-container {
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        padding-bottom: 10vw;
+        width: 80%;
+    }
+.accessibility-images-container2 {
+        display: flex;
+        margin: auto;
+        padding-bottom: 10vw;
+        width: 80%;
+    }
+.colum {
+      padding: 5px;
+      width: 30%;
+  }
+.colum2 {
+      margin: auto;
+      padding: 5px;
+      width: 30%;
+  }
+.colum-header {
+      font-size: 2em;
+      text-align: center;
+  }
+/*same concept as other divs mentioned above*/
+@media only screen and (max-width: 1000px) {
+    .accessibility-images-container {
+          display: block;
+          margin: auto;
+          width: 80%;
+      }
+    .accessibility-images-container2 {
+          display: block;
+          margin: auto;
+          width: 80%;
+      }
+    .colum {
+          display: block;
+          margin: auto;
+          width: 80%;
+      }
+    .colum2 {
+          display: block;
+          margin: auto;
+          width: 80%;
+      }
+  }
+/*Max-width attribute will display the content as "block" (vertically) if the website page is smaller than 1200px making it easier to see images and text*/
+/*increased width to make the content bigger and more aethetically pleasing for smaller screens*/
+@media only screen and (max-width: 1200px) {
+    .main-container-accessibilty{
+          display: block;
+          width: 80%;
+      }
+    .mainarticle-accessibility{
+          width: 100%;
+      }
+}
+/*Images*/
+.main-container img {
+        border-radius: 5px;
+        transition: transform .2s; /*when using hover. Utilizing transform will make a smoother transition*/
+    }
+.main-container img:hover {
+        transform: scale(1.1);  /*(110% zoom) */
+    }
+.schranz {
+      padding: 10em;
+      width: 50%;
+  }
+/*Exclusive css for about page*/
+.aboutpage-img {
+      margin-top: 10px;
+      width: 100%;
+  }
+/*Here is the "read more" and "finished" checkboxes */
+#check {
+    opacity: 0; /*Originally used display: none; to hide the checkbox but realised that i limited the tabindex function which would descrese accessibility, when adding opacitiy you still get to hide the checkbox, but tabindex works aswell*/
+  }
+.textbox-exstension {
+      display: none;
+  }
+#check:checked ~ .textbox-exstension {
+      display: block;
+  }
+#check:checked ~ .readmore {
+      display: none;
+  }
+.readmore {
+      background-color: #ffd500;
+      border: solid 2px black;
+      border-radius: 5px;
+      cursor: pointer; /*Changes the courser*/
+      margin-top: 10px;
+      padding: 3px 10px;
+  }
+.finished {
+      background-color: #ffd500;
+      border: solid 2px black;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      padding: 3px 10px;
+  }
+  /*FunPage*/
+  /*This is Schranz page navbar, this navbar was inspired by the navbar we used on our other webpages but also the "read more" "finished" checkbox*/
+.navbar-Schranz {
+      width: 100%;
+  }
+.navbar-Schranz a {
+    color: white;
+    font-size: 18px;
+    padding: 0px 50px;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+.navbar-Schranz a.active {
+      color: gray;
+  }
+.navbar-Schranz a:hover {
+      color: gray;
+  }
+.navbar-Schranz ul {
+      border-radius: 10px;
+      float: left;
+      height: auto;
+      list-style-type: none;  /*remove bullet points from the list*/
+      margin-left: 50px;
+      padding: 10px;
+  }
+.navbar-Schranz li {
+      display: inline-block;
+  }
+@media only screen and (max-width: 700px) {
+    .navbar-Schranz li {
+          display: block;
+      }
+}
+/*Navigation button*/
+#check2 {
+      display: none;
+      opacity: 0;
+     /*Instead of  explained on last box*/
+  }
+#close-button {
+      width: 50px;
+  }
+.navbuttonclose {
+      color: white;
+      cursor: pointer;
+      display: none;
+      font-size: 40px;
+      line-height: 80px;
+  }
+.navbuttonopen {
+      color: white;
+      cursor: pointer;
+      font-size: 40px;
+      line-height: 80px;
+      margin-left: 50px;
+  }
+.navbar-exstension {
+      display: none;
+  }
+#check2:checked ~ .navbar-exstension {
+      display: block;
+  }
+#check2:checked ~ .navbuttonopen {
+      display: none;
+  }
+#check2:checked ~ .navbuttonclose {
+      display: block;
+  }
+  /*Adding background picture*/
+.fun {
+      background-attachment: fixed;      /*wanted to make the background always visible throughout the website. by using fixed, our article will scroll over it*/
+      background-image: url("../img/music-light-black-and-white-people-technology-night-909043-pxhere.com.jpg");  /*Photo is free of copyright under Creative Commons CC0. Download link https://pxhere.com/en/photo/909043*/
+      background-repeat: no-repeat;      /*image will not repeat*/
+      background-size: cover;   /*background will be covered by the image*/
+      color: white;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+.logo-img {
+       padding-bottom: 18vw;
+       padding-top: 10vw;
+       text-align: center;
+   }
+.fun-wrapper{
+    background-color: rgba(0, 0, 0, 0.8);  /*0.8 opacity so that the background will be visible throughout the page*/
+}
+/*Standard Parent and child div from previous page with some modification to differ from main page*/
+/*Uses the same concept as .maincontainer mentioned above, but with different numbers*/
+.fun-container {
+      display: flex;
+      justify-content: space-around;
+      margin: auto;
+      padding: 1.5em;
+      width: 80%;
+  }
+/*divs that were horizontally displayed with flex, will now be displayed as block if the page are less then 1200px as to utilize limited space on smaller screen*/
+@media only screen and (max-width: 1200px) {
+    .fun-container{
+           display: block;
+           width: 80%;
+       }
+    .fun-div {
+          margin: auto;
+          width: 80%;
+      }
+    .fun-div-set {
+          margin: auto;
+          width: 80%;
+      }
+  }
+.fun-div {
+      text-align: center;
+      width: 60%;
+  }
+.fun-div-set {
+      text-align: center;
+      width: 40%;
+  }
+.fun-div p {
+      font-size: 1.3em;
+      font-weight: 200;
+      line-height: 1.5em;
+  }
+/*img*/
+.fractal {
+      border-radius: 5px;
+      width: 80%;
+  }
+.schranz-header {
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex; /*Display flex was used in this instance to connect emptyspaces between divs*/
+      justify-content: space-around;
+      margin: auto;
+  }
+.fun-container img {
+      border-radius: 5px;
+      padding-top: 1.2em;
+      transition: transform .2s;
+  }
+.fun-container img:hover {
+      transform: scale(1.3); /*(130% zoom) */
+  }
+/*Same concept as the footer on rest of the pages but with backround-color*/
+.fun-outer-footer{
+      background-color: rgba(0, 0, 0, 0.8);
+  }
+.fun-footer-container {
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+        padding: 20px;
+        width: 70%;
+    }  
+.fun-footer-container h2{
+      font-size: 1.6em;
+  }
+/*Footer will be displayed vertically instead of horizontally if screens are smaller than 800px*/
+@media only screen and (max-width: 800px) {
+    .fun-footer-container{
+          display: block;
+          width: 100%;
+      }
+  }
+
+
