@@ -232,6 +232,9 @@ header {
         padding-bottom: 10vw;
         width: 80%;
     }
+.accessibility-images-container img:hover {
+      transform: scale(1.1);  /*(110% zoom) */
+    }
 .accessibility-images-container2 {
         display: flex;
         margin: auto;
